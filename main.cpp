@@ -25,25 +25,23 @@ void stack_options(Stack stack){
         switch(option){
         case 1:{
             cout << "Podaj nowa wartosc: " << endl;
-            if(stack.top != stack.max_elements-1){
-                push_stack(&stack);
-            }
-            else{
-                cout << "Stos jest pelny!" << endl;
+            int element = int_validation();
+            bool is_add = push_stack(&stack,element);
+            if(!is_add){
+                    cout << "Stos jest pelny! Nie udalo sie dodac elementu!" << endl;
             }
         }
             break;
-        case 2:
-            if(stack.top != -1){
-                pop_stack(&stack);
+        case 2:{
+            int is_remove = pop_stack(&stack);
+            if(!is_remove){
+                cout << "Blad! Nie udalo sie zdajc elementu. Sprawdz czy stos nie jest pusty!" << endl;
             }
-            else{
-                cout << "Stos jest pusty!" << endl;
-            }
+        }
             break;
         case 3:{
             if(stack.top != -1){
-                int value = peek_stack(stack);
+                int value = peek_stack(&stack);
                     cout << value << endl;
             }
             else{
@@ -54,9 +52,12 @@ void stack_options(Stack stack){
         case 4:{
             cout << endl;
             int index = stack.top;
+            if(stack.top == -1){
+                cout << "Stos jest pusty!" << endl;
+            }
             while(index != -1){
-                int value = display_stack(stack);
-                cout << stack.tab[index--] << endl; // tu jest blad, podczas wyswietlania zeruje sobie ilosc elementow w tablicy!!!!!
+                int value = display_stack(&stack);
+                cout << stack.tab[index--] << endl;
             }
         }
             break;

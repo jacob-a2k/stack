@@ -6,9 +6,9 @@ struct Stack{
     int top = -1;
     int *tab;
 };
-void push_stack(Stack*);
-void pop_stack(Stack*);
-int peek_stack(Stack);
-int display_stack(Stack);
+bool push_stack(Stack* const ,int const);
+bool pop_stack(Stack* const);
+int peek_stack(const Stack* const);
+int display_stack(const Stack* const);
 
 #endif // STACK_H

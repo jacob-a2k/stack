@@ -1,36 +1,31 @@
 #include <iostream>
-#include <limits>
 #include "stack.h"
 
 using namespace std;
 
-int put_number();
-
-void push_stack(Stack* stack){
+bool push_stack(Stack* const stack, int const element){
     if(stack->top == stack->max_elements-1){
-        return;
+        return false;
     }
-    int element = put_number();
     stack->top++;
     stack->tab[stack->top] = element;
+    return true;
 }
-void pop_stack(Stack* stack){
-    stack->top--;
-}
-int peek_stack(Stack stack){
-    return stack.tab[stack.top];
-}
-int display_stack(Stack stack){
-    return stack.tab[stack.top];
-}
-int put_number(){
-    int number;
-    cin >> number;
-    while(!cin.good()){
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(),'\n');
-        cout << "Nalezy podac numer!" << endl;
-        cin >> number;
+bool pop_stack(Stack* const stack){
+    if(stack->top != -1){
+        stack->top--;
+        return true;
     }
-    return number;
+    return false;
 }
+int peek_stack(const Stack* const stack){
+    if(stack->top != -1){
+        return stack->tab[stack->top];;
+    }
+}
+int display_stack(const Stack* const stack){
+    if(stack->top != -1){
+        return stack->tab[stack->top];
+    }
+}
+
