@@ -40,11 +40,14 @@ void stack_options(Stack stack){
         }
             break;
         case 3:{
-            if(stack.top != -1){
+            try {
+                if (stack.top == -1) {
+                    throw stack;
+                }
                 int value = peek_stack(&stack);
-                    cout << value << endl;
+                cout << value << endl;
             }
-            else{
+            catch (Stack stack) {
                 cout << "Stos jest pusty!" << endl;
             }
         }

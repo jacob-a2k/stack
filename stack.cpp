@@ -22,10 +22,12 @@ int peek_stack(const Stack* const stack){
     if(stack->top != -1){
         return stack->tab[stack->top];;
     }
+    return 0;
 }
 int display_stack(const Stack* const stack){
     if(stack->top != -1){
         return stack->tab[stack->top];
     }
+    return 0;
 }
 
