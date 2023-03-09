@@ -28,7 +28,7 @@ void stack_options(Stack stack){
             int element = int_validation();
             bool is_add = push_stack(&stack,element);
             if(!is_add){
-                    cout << "Stos jest pelny! Nie udalo sie dodac elementu!" << endl;
+                cout << "Stos jest pelny! Nie udalo sie dodac elementu!" << endl;
             }
         }
             break;
@@ -40,16 +40,13 @@ void stack_options(Stack stack){
         }
             break;
         case 3:{
-            try {
-                if (stack.top == -1) {
-                    throw stack;
-                }
+            //if (stack.top != -1) {
                 int value = peek_stack(&stack);
                 cout << value << endl;
-            }
-            catch (Stack stack) {
-                cout << "Stos jest pusty!" << endl;
-            }
+           // }
+           // else{
+           //     cout << "Stos jest pusty!" << endl;
+           // }
         }
             break;
         case 4:{
