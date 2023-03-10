@@ -11,10 +11,10 @@ void stack_options(Stack stack);
 
 int main()
 {
-    Stack stack;
+    int stack_size;
     cout << "Witaj! Podaj rozmiar stosu: ";
-    cin >> stack.max_elements;
-    stack.tab = new int[stack.max_elements];
+    cin >> stack_size;
+    Stack stack(stack_size);
     stack_options(stack);
 
 }
@@ -24,11 +24,11 @@ void stack_options(Stack stack){
         int option = int_validation();
         switch(option){
         case 1:{
-            bool full = is_full_stack(&stack);
+            bool full = stack.is_full_stack();
             if (!full) {
                 cout << "Podaj nowa wartosc: " << endl;
                 int element = int_validation();
-                bool is_add = push_stack(&stack, element);
+                bool is_add = stack.push_stack(element);
                 if (!is_add) {
                     cout <<"Blad! Nie udalo sie dodac elementu. Sprawdz czy stos nie jest pelny!" << endl;
                 }
@@ -39,9 +39,9 @@ void stack_options(Stack stack){
         }
             break;
         case 2:{
-            bool empty = is_empty_stack(&stack);
+            bool empty = stack.is_empty_stack();
             if (!empty) {
-                int is_remove = pop_stack(&stack);
+                int is_remove = stack.pop_stack();
                 if (!is_remove) {
                     cout << "Blad! Nie udalo sie zdajc elementu. Sprawdz czy stos nie jest pusty!" << endl;
                 }
@@ -52,9 +52,9 @@ void stack_options(Stack stack){
         }
             break;
         case 3:{
-            bool empty = is_empty_stack(&stack);
+            bool empty = stack.is_empty_stack();
             if(!empty) {
-                int value = peek_stack(&stack);
+                int value = stack.peek_stack();
                 cout << value << endl;
             }
             else{
@@ -64,14 +64,15 @@ void stack_options(Stack stack){
             break;
         case 4:{
             cout << endl;
-            int index = stack.top;
-            bool empty = is_empty_stack(&stack);
+            int index = stack.actual_stack_size();
+            bool empty = stack.is_empty_stack();
             if(empty){
                 cout << "Stos jest pusty!" << endl;
             }
             while(index != -1){
-                int value = display_stack(&stack);
-                cout << stack.tab[index--] << endl;
+                int value = stack.display_stack(index);
+                cout << value << endl;
+                index--;
             }
         }
             break;

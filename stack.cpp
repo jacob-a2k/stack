@@ -5,33 +5,36 @@
 
 using namespace std;
 
-bool push_stack(Stack* const stack, int const element){
-    bool full = is_full_stack(stack);
+bool Stack::push_stack(int const element){
+    bool full = is_full_stack();
     assert(!full);
-    stack->top++;
-    stack->tab[stack->top] = element;
+    top++;
+    tab[top] = element;
     return true;
 }
-bool pop_stack(Stack* const stack){
-    bool empty = is_empty_stack(stack);
+bool  Stack::pop_stack(){
+    bool empty = is_empty_stack();
     assert(!empty);
-        stack->top--;
+        top--;
         return true;
 }
-int peek_stack(const Stack* const stack){
-    bool empty = is_empty_stack(stack);
+int  Stack::peek_stack(){
+    bool empty = is_empty_stack();
     assert(!empty);
-        return stack->tab[stack->top];
+        return tab[top];
 }
-int display_stack(const Stack* const stack){
-    if(is_empty_stack(stack)){
-        return stack->tab[stack->top];
+int  Stack::display_stack(int const index){
+    if(!is_empty_stack()){
+        return tab[index];
     }
     return 0;
 }
-bool is_empty_stack(const Stack* const stack) {
-    return (stack->top == -1);
+bool  Stack::is_empty_stack() {
+    return (top == -1);
 }
-bool is_full_stack(const Stack* const stack) {
-    return (stack->top == stack->max_elements - 1);
+bool  Stack::is_full_stack() {
+    return (top ==max_elements - 1);
+}
+int Stack::actual_stack_size() {
+    return top;
 }
