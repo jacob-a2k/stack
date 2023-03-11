@@ -8,6 +8,7 @@ private:
     int *tab;
 public:
     Stack(int capacity);
+    ~Stack();
     void Push(int);
     void Pop();
     int Peek() const;

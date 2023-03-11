@@ -10,6 +10,10 @@ Stack::Stack(int capacity) {
 	this->size = 0;
 	this->tab = new int[this->capacity];
 }
+Stack::~Stack() {
+	cout << "~Stack - czesc jestem destruktor" << endl;
+	delete [] tab;
+}
 void Stack::Push(int element) {
 	assert(!this->IsFull());
 	this->tab[this->size] = element;
