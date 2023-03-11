@@ -19,20 +19,20 @@ void Stack::Pop() {
 	assert(!this->IsEmpty());
 	this->size--;
 }
-int Stack::Peek() {
+int Stack::Peek() const {
 	assert(!this->IsEmpty());
 	return this->tab[this->size - 1];
 }
-int Stack::Display(int index) {
+int Stack::Display(int index) const {
 	assert(!this->IsEmpty());
 	return this->tab[index];
 }
-bool Stack::IsEmpty() {
+bool Stack::IsEmpty() const {
 	return this->size == 0;
 }
-bool Stack::IsFull() {
+bool Stack::IsFull() const {
 	return this->size == capacity;
 }
-int Stack::GetSize() {
+int Stack::GetSize() const {
 	return this->size;
 }

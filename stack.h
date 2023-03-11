@@ -10,11 +10,11 @@ public:
     Stack(int capacity);
     void Push(int);
     void Pop();
-    int Peek();
-    int Display(int);
-    bool IsEmpty();
-    bool IsFull();
-    int GetSize();
+    int Peek() const;
+    int Display(int) const;
+    bool IsEmpty() const;
+    bool IsFull() const;
+    int GetSize() const;
 
 };
 #endif // STACK_H
