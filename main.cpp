@@ -70,8 +70,10 @@ void stack_options(Stack* stack){
             }
         }
             break;
-        case 5:
+        case 5: {
+            stack->Stack::~Stack();
             exit(0);
+        }
         default:
             cout << "Sprawdz ponownie dostepne opcje i tym razem podaj poprawny numer!" << endl;
 
