@@ -6,7 +6,7 @@ class Stack{
     int size;
     int *tab;
 public:
-    Stack(int stack_capacity);
+    Stack(int capacity);
     void push(int);
     void pop();
     int peek();

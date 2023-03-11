@@ -5,38 +5,38 @@
 
 using namespace std;
 
-Stack::Stack(int stack_capacity) {
-	capacity = stack_capacity;
-	size = 0;
-	tab = new int[capacity];
+Stack::Stack(int capacity) {
+	this->capacity = capacity;
+	this->size = 0;
+	this->tab = new int[this->capacity];
 }
 void Stack::push(int element) {
-	bool full = is_full();
+	bool full = this->is_full();
 	assert(!full);
-	tab[size] = element;
-	size++;
+	this->tab[this->size] = element;
+	this->size++;
 }
 void Stack::pop() {
-	bool empty = is_empty();
+	bool empty = this->is_empty();
 	assert(!empty);
-	size--;
+	this->size--;
 }
 int Stack::peek() {
-	bool empty = is_empty();
-	return tab[size - 1];
+	bool empty = this->is_empty();
+	return this->tab[this->size - 1];
 }
 int Stack::display(int index) {
-	if (!is_empty()) {
-		return tab[index];
+	if (!this->is_empty()) {
+		return this->tab[index];
 	}
 	return 0;
 }
 bool Stack::is_empty() {
-	return (size == 0);
+	return this->size == 0;
 }
 bool Stack::is_full() {
-	return (size == capacity);
+	return this->size == capacity;
 }
 int Stack::get_size() {
-	return size;
+	return this->size;
 }
