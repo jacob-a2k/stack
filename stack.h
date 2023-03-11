@@ -2,6 +2,7 @@
 #define STACK_H
 
 class Stack{
+private:
     int capacity;
     int size;
     int *tab;
