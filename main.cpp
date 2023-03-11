@@ -58,12 +58,12 @@ void stack_options(Stack* stack){
             break;
         case 4:{
             cout << endl;
-            int index = stack->GetSize();
+            int index = stack->GetSize() - 1;
             bool empty = stack->IsEmpty();
             if(empty){
                 cout << "Stos jest pusty!" << endl;
             }
-            while(index != 0){
+            while(index >= 0){
                 int value = stack->Display(index);
                 cout << value << endl;
                 index--;
