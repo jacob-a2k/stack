@@ -69,7 +69,7 @@ void stack_options(Stack stack){
             if(empty){
                 cout << "Stos jest pusty!" << endl;
             }
-            while(index != -1){
+            while(index != 0){
                 int value = stack.display_stack(index);
                 cout << value << endl;
                 index--;
