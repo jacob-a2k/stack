@@ -11,25 +11,21 @@ Stack::Stack(int capacity) {
 	this->tab = new int[this->capacity];
 }
 void Stack::Push(int element) {
-	bool full = this->IsFull();
-	assert(!full);
+	assert(!this->IsFull());
 	this->tab[this->size] = element;
 	this->size++;
 }
 void Stack::Pop() {
-	bool empty = this->IsEmpty();
-	assert(!empty);
+	assert(!this->IsEmpty());
 	this->size--;
 }
 int Stack::Peek() {
-	bool empty = this->IsEmpty();
+	assert(!this->IsEmpty());
 	return this->tab[this->size - 1];
 }
 int Stack::Display(int index) {
-	if (!this->IsEmpty()) {
-		return this->tab[index];
-	}
-	return 0;
+	assert(!this->IsEmpty());
+	return this->tab[index];
 }
 bool Stack::IsEmpty() {
 	return this->size == 0;
