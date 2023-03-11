@@ -64,7 +64,7 @@ void stack_options(Stack stack){
             break;
         case 4:{
             cout << endl;
-            int index = stack.actual_stack_size();
+            int index = stack.get_actual_stack_size();
             bool empty = stack.is_empty_stack();
             if(empty){
                 cout << "Stos jest pusty!" << endl;
