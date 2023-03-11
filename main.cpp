@@ -38,10 +38,7 @@ void stack_options(Stack stack){
         case 2:{
             bool empty = stack.is_empty();
             if (!empty) {
-                int is_remove = stack.pop();
-                if (!is_remove) {
-                    cout << "Blad! Nie udalo sie zdajc elementu. Sprawdz czy stos nie jest pusty!" << endl;
-                }
+                stack.pop();
             }
             else {
                 cout << "Stos jest pusty!" << endl;

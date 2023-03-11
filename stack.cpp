@@ -16,11 +16,10 @@ void Stack::push(int element) {
 	tab[size] = element;
 	size++;
 }
-bool Stack::pop() {
+void Stack::pop() {
 	bool empty = is_empty();
 	assert(!empty);
 	size--;
-	return true;
 }
 int Stack::peek() {
 	bool empty = is_empty();

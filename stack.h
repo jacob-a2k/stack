@@ -8,7 +8,7 @@ class Stack{
 public:
     Stack(int stack_capacity);
     void push(int);
-    bool pop();
+    void pop();
     int peek();
     int display(int);
     bool is_empty();
