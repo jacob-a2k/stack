@@ -24,11 +24,11 @@ void stack_options(Stack stack){
         int option = int_validation();
         switch(option){
         case 1:{
-            bool full = stack.is_full();
+            bool full = stack.IsFull();
             if (!full) {
                 cout << "Podaj nowa wartosc: " << endl;
                 int element = int_validation();
-                stack.push(element);
+                stack.Push(element);
             }
             else {
                 cout << "Stos jest pelny!" << endl;
@@ -36,9 +36,9 @@ void stack_options(Stack stack){
         }
             break;
         case 2:{
-            bool empty = stack.is_empty();
+            bool empty = stack.IsEmpty();
             if (!empty) {
-                stack.pop();
+                stack.Pop();
             }
             else {
                 cout << "Stos jest pusty!" << endl;
@@ -46,9 +46,9 @@ void stack_options(Stack stack){
         }
             break;
         case 3:{
-            bool empty = stack.is_empty();
+            bool empty = stack.IsEmpty();
             if(!empty) {
-                int value = stack.peek();
+                int value = stack.Peek();
                 cout << value << endl;
             }
             else{
@@ -58,13 +58,13 @@ void stack_options(Stack stack){
             break;
         case 4:{
             cout << endl;
-            int index = stack.get_size();
-            bool empty = stack.is_empty();
+            int index = stack.GetSize();
+            bool empty = stack.IsEmpty();
             if(empty){
                 cout << "Stos jest pusty!" << endl;
             }
             while(index != 0){
-                int value = stack.display(index);
+                int value = stack.Display(index);
                 cout << value << endl;
                 index--;
             }

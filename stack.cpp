@@ -10,33 +10,33 @@ Stack::Stack(int capacity) {
 	this->size = 0;
 	this->tab = new int[this->capacity];
 }
-void Stack::push(int element) {
-	bool full = this->is_full();
+void Stack::Push(int element) {
+	bool full = this->IsFull();
 	assert(!full);
 	this->tab[this->size] = element;
 	this->size++;
 }
-void Stack::pop() {
-	bool empty = this->is_empty();
+void Stack::Pop() {
+	bool empty = this->IsEmpty();
 	assert(!empty);
 	this->size--;
 }
-int Stack::peek() {
-	bool empty = this->is_empty();
+int Stack::Peek() {
+	bool empty = this->IsEmpty();
 	return this->tab[this->size - 1];
 }
-int Stack::display(int index) {
-	if (!this->is_empty()) {
+int Stack::Display(int index) {
+	if (!this->IsEmpty()) {
 		return this->tab[index];
 	}
 	return 0;
 }
-bool Stack::is_empty() {
+bool Stack::IsEmpty() {
 	return this->size == 0;
 }
-bool Stack::is_full() {
+bool Stack::IsFull() {
 	return this->size == capacity;
 }
-int Stack::get_size() {
+int Stack::GetSize() {
 	return this->size;
 }

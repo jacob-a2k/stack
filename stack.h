@@ -7,13 +7,13 @@ class Stack{
     int *tab;
 public:
     Stack(int capacity);
-    void push(int);
-    void pop();
-    int peek();
-    int display(int);
-    bool is_empty();
-    bool is_full();
-    int get_size();
+    void Push(int);
+    void Pop();
+    int Peek();
+    int Display(int);
+    bool IsEmpty();
+    bool IsFull();
+    int GetSize();
 
 };
 #endif // STACK_H
