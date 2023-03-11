@@ -5,7 +5,7 @@
 
 using namespace std;
 
-bool Stack::push_stack(int const element){
+bool Stack::push_stack(int element){
     bool full = is_full_stack();
     assert(!full);
     top++;
@@ -20,10 +20,9 @@ bool  Stack::pop_stack(){
 }
 int  Stack::peek_stack(){
     bool empty = is_empty_stack();
-    assert(!empty);
         return tab[top];
 }
-int  Stack::display_stack(int const index){
+int  Stack::display_stack(int index){
     if(!is_empty_stack()){
         return tab[index];
     }
