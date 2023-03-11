@@ -24,14 +24,11 @@ void stack_options(Stack stack){
         int option = int_validation();
         switch(option){
         case 1:{
-            bool full = stack.is_full_stack();
+            bool full = stack.is_full();
             if (!full) {
                 cout << "Podaj nowa wartosc: " << endl;
                 int element = int_validation();
-                bool is_add = stack.push_stack(element);
-                if (!is_add) {
-                    cout <<"Blad! Nie udalo sie dodac elementu. Sprawdz czy stos nie jest pelny!" << endl;
-                }
+                stack.push(element);
             }
             else {
                 cout << "Stos jest pelny!" << endl;
@@ -39,9 +36,9 @@ void stack_options(Stack stack){
         }
             break;
         case 2:{
-            bool empty = stack.is_empty_stack();
+            bool empty = stack.is_empty();
             if (!empty) {
-                int is_remove = stack.pop_stack();
+                int is_remove = stack.pop();
                 if (!is_remove) {
                     cout << "Blad! Nie udalo sie zdajc elementu. Sprawdz czy stos nie jest pusty!" << endl;
                 }
@@ -52,9 +49,9 @@ void stack_options(Stack stack){
         }
             break;
         case 3:{
-            bool empty = stack.is_empty_stack();
+            bool empty = stack.is_empty();
             if(!empty) {
-                int value = stack.peek_stack();
+                int value = stack.peek();
                 cout << value << endl;
             }
             else{
@@ -65,12 +62,12 @@ void stack_options(Stack stack){
         case 4:{
             cout << endl;
             int index = stack.get_size();
-            bool empty = stack.is_empty_stack();
+            bool empty = stack.is_empty();
             if(empty){
                 cout << "Stos jest pusty!" << endl;
             }
             while(index != 0){
-                int value = stack.display_stack(index);
+                int value = stack.display(index);
                 cout << value << endl;
                 index--;
             }
