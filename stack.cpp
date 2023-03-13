@@ -6,7 +6,7 @@
 using namespace std;
 
 Stack::Stack(int capacity) {
-	this->capacity = capacity;
+	this->capacity =    capacity;
 	this->size = 0;
 	this->tab = new int[this->capacity];
 }

@@ -19,9 +19,10 @@ int main()
 
 }
 void stack_options(Stack* stack){
-    for(;;){
+    int option = 0;
+    while(option != 5){
         menu();
-        int option = int_validation();
+        option = int_validation();
         switch(option){
         case 1:{
             bool full = stack->IsFull();
@@ -70,10 +71,8 @@ void stack_options(Stack* stack){
             }
         }
             break;
-        case 5: {
-            stack->Stack::~Stack();
-            exit(0);
-        }
+        case 5: 
+            break;
         default:
             cout << "Sprawdz ponownie dostepne opcje i tym razem podaj poprawny numer!" << endl;
 
